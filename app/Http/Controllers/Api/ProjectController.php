@@ -13,9 +13,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::all()
-        ->with('category')
-        ->orderBy('created_at', 'DESC');
+        $projects = Project::all();
         foreach ($projects as $project) {
             if ($project->screenshot_path){
                 $project->screenshot_path = url('storage/' . $project->screenshot_path);
