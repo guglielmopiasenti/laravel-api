@@ -15,6 +15,7 @@
             <div class="col-md-12">
                 <h1 class="text-center" style="color: #333;">Hello!</h1>
                 <p class="text-center" style="color: #666;">This is a test email message sent to Mailtrap.</p>
+                <p>{{$content}}</p>
                 <div class="text-center">
                     <a href="#" class="btn btn-primary" style="text-decoration: none; border-radius: 5px;">Visit
                         Our Website</a>
