@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
+use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\ProjectController;
 use App\Models\Project;
 use Illuminate\Http\Request;
@@ -27,3 +28,6 @@ Route::apiResource('projects', ProjectController::class);
 
 // route to get a project detail
 Route::get('/projects/{project}', [ProjectController::class, 'show']);
+
+// route to get message and mail
+Route::post('/contact-message', [ContactController::class, 'message']);
