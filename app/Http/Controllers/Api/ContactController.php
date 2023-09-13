@@ -37,7 +37,7 @@ class ContactController extends Controller
         $mail = new ContactMessageMail(
             sender: $data['email'],
             subject: $data['subject'],
-            content: $data['message'],
+            content: $data['content'],
         );
 
         // Send the email using Laravel's Mail facade to the specified address
