@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class ContactController extends Controller
 {
     public function message(){
-       return response()->json('ciao');
+       return response(null, 204);
     }
 }
