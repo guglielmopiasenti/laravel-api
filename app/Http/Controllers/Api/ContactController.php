@@ -23,6 +23,11 @@ class ContactController extends Controller
             'subject.required' => 'mail subject is mandatory',
             'content.required' => 'mail content is mandatory',
         ]);
+
+        if($validator->fails()){
+            return response()->json(['errors' => $validator->errors()], 400);
+        }
+
         $mail = new ContactMessageMail(
             sender: $data['email'],
             subject: $data['subject'],
