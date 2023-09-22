@@ -17,8 +17,10 @@ class ProjectController extends Controller
      */
     public function index()
     {
+        $types = Type::all();
+        $technologies = Technology::all();
         $projects = Project::orderBy('updated_at', 'DESC')->paginate(10);
-        return view('admin.projects.index', compact('projects'));
+        return view('admin.projects.index', compact('projects', 'types', 'technologies'));
     }
 
     /**
