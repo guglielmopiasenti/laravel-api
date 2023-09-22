@@ -79,9 +79,26 @@
             </tbody>
         </table>
     </div>
-    @if ($projects->hasPages())
-        {{ $projects->links() }}
-    @endif
+    <div class="card p-3">
+        <h3 class="py-4">Projects by Technology</h3>
+        <div class="row row-cols-3 ">
+            @foreach ($types as $type)
+                <div class="col d-flex">
+                    <h4 class="mb-4">
+                        {{$type->label}}
+                    </h4>
+                    <small class="mx-2">
+                        {{count($type->projects)}}
+                    </small>
+                </div>
+            @endforeach
+        </div>
+    </div>
+    <div class="py-5">
+        @if ($projects->hasPages())
+            {{ $projects->links() }}
+        @endif
+    </div>
 @endsection
 @section('scripts')
     @vite('resources/js/delete-confirmation.js')
